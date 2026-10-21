@@ -1,11 +1,15 @@
 from random import randint
+from pandas import read_csv
 
-family_names = ["John", "Claire", "Mark", "Jacqueline", "Mom", "Dad"]
 
 if __name__ == "__main__":
+	# read csv column "Name" into a list
+	df = read_csv("sample_list.csv")
+	names = df["Name"].tolist()
+		
 	# make a copy of the family names list to avoid modifying the original list
-	givers = [n for n in family_names]
-	recipients = [n for n in family_names]
+	givers = [n for n in names]
+	recipients = [n for n in names]
 	pairs = []
 
 	# randomly pick a recipient for each family member
